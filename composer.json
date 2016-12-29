@@ -1,27 +1,27 @@
 {
-  "name": "DigitalState/Platform-Widget-Bundle",
-  "type": "symfony-bundle",
-  "description": "Digital State Widgets Bundle",
-  "homepage": "https://github.com/DigitalState/Platform-Widget-Bundle.git",
-  "keywords": ["Oro", "Communication"],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Digital State, Inc",
-      "homepage": "http://www.digitalState.ca"
+    "name": "digitalstate/platform-widget-bundle",
+    "type": "symfony-bundle",
+    "description": "DigitalState Widget Bundle",
+    "homepage": "https://github.com/DigitalState/Platform-Widget-Bundle.git",
+    "keywords": ["Oro", "Communication"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "DigitalState, Inc",
+            "homepage": "http://www.digitalstate.ca"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "psr-0": { "Ds\\Bundle\\WidgetBundle": "" }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.x-dev"
+        }
     }
-  ],
-  "require": {
-    "php": ">=5.6"
-  },
-  "autoload": {
-    "psr-0": { "Ds\\Bundle\\WidgetBundle": "" }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "extra": {
-    "branch-alias": {
-      "dev-master": "0.x-dev"
-    }
-  }
 }
