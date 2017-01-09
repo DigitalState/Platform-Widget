@@ -7,7 +7,7 @@ The Widget bundle provides the developer a way to define widgets in the user int
 - [Widget Definition](#widget-definition)
 - [Widget Creation](#widget-creation)
 - [Real World Example](#widget-creation)
-- [Todo](#to-do)
+- [Todo](#todo)
 
 ## Widget Definition
 
