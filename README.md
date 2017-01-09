@@ -6,11 +6,14 @@ The Widget bundle provides the developer a way to define widgets in the user int
 
 - [Widget Definition](#widget-definition)
 - [Widget Creation](#widget-creation)
+- [Context Filter](#context-filter)
 - [Todo](#todo)
 
 ## Widget Definition
 
-A widget consists of a title and content meant to be displayed in a template in a specific position. Essentially, it allows the developer to customise templates without directly modifying the template files.
+A widget consists of a title and content meant to be displayed in a template in a specific position. Essentially, it allows the developer to customise templates without directly modifying the template files. Widgets are comparable to [ORO Placeholders](https://github.com/orocrm/platform/tree/master/src/Oro/Bundle/UIBundle#introduction-to-placeholders) with two additional features: the capability of adding a title and the context filter.
+
+*Note: Eventually, if possible, we will merge the concept of widgets to ORO Placeholders with our additional features.*
 
 ## Widget Creation
 
@@ -64,6 +67,17 @@ services:
     </body>
 </html>
 ```
+
+## Context Filter
+
+The context filter is an additional filter on top of the **position** filter used to further select widgets for a given position.
+
+Let's use a real world example to explain the concept. 
+
+The [DigitalState-Platform](https://github.com/DigitalState/Platform) introduces the concept of Government Services through the [DsServiceBundle](https://github.com/DigitalState/Platform/tree/master/src/Ds/Bundle/ServiceBundle). This bundle provides, at its core, the base actions for creating, editing, and deleting Generic Services. The editing action makes uses of the Widget concept for displaying the core form fields for the Generic Service on the edit page. 
+
+The [DigitalState-Platform](https://github.com/DigitalState/Platform) also introduces the concept of [BPM](https://en.wikipedia.org/wiki/Business_process_modeling) Services through the [DsServiceBpmBundle](https://github.com/DigitalState/Platform/tree/master/src/Ds/Bundle/ServiceBpmBundle). This bundle essentially grafts itself on top of the [DsServiceBundle](https://github.com/DigitalState/Platform/tree/master/src/Ds/Bundle/ServiceBundle) to provide additional BPM-related functionality for when a manager wishes to create a BPM-based Service. A BPM Service is the same as a Generic Service, with additional fields to map the BPM process definition id, etc. The bundle defines an additional Widget for the additional form fields and [flags the context of the widget as `bpm`](https://github.com/DigitalState/Platform/blob/master/src/Ds/Bundle/ServiceBpmBundle/Resources/config/widgets.yml), meaning this Widget should only be displayed if it belongs to the specific position and the specific context.
+
 
 ## Todo
 
