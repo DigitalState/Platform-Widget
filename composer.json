@@ -16,7 +16,7 @@
         "oro/platform": "1.10.*"
     },
     "autoload": {
-        "psr-0": { "Ds\\Bundle\\WidgetBundle": "" }
+        "psr-4": { "Ds\\Bundle\\WidgetBundle\\": "" }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
