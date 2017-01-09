@@ -78,3 +78,6 @@ Example 2:
     {{ widget.title }}
     {{ widget.content|raw }}
 {% endposition %}
+
+**Enable widgets to be defined as template or callbacks, instead of classes.**
+
