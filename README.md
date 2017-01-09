@@ -6,7 +6,6 @@ The Widget bundle provides the developer a way to define widgets in the user int
 
 - [Widget Definition](#widget-definition)
 - [Widget Creation](#widget-creation)
-- [Real World Example](#widget-creation)
 - [Todo](#todo)
 
 ## Widget Definition
@@ -71,13 +70,17 @@ services:
 **Introduce custom twig tag for widget positions.**
   
 Example 1: 
-{% position <position_name> with { variable: value } %}
+```twig
+{% position *position_name* with { variable: value } %}
+```
 
 Example 2: 
-{% position <position_name> %}
+```twig
+{% position *position_name* %}
     {{ widget.title }}
     {{ widget.content|raw }}
 {% endposition %}
+```
 
 **Enable widgets to be defined as template or callbacks, instead of classes.**
 
