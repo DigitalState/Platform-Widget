@@ -1,6 +1,6 @@
 # Platform-Widget-Bundle
 
-The Widget bundle provides the developer a way to define widgets in the user interface. 
+The Widget bundle provides the developers a way to define widgets in the user interface. 
 
 ## Table of Contents
 
