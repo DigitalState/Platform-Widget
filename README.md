@@ -70,14 +70,30 @@ services:
 
 ## Context Filter
 
-The context filter is an additional filter on top of the **position** filter used to further select widgets for a given position.
+The context filter is an optional parameter allowing the developer to define when a Widget should be rendered.
 
-Let's use a real world example to explain the concept. 
+Let's use a real world example to explain the concept:
 
-The [DigitalState-Platform](https://github.com/DigitalState/Platform) introduces the concept of Government Services through the [DsServiceBundle](https://github.com/DigitalState/Platform/tree/master/src/Ds/Bundle/ServiceBundle). This bundle provides, at its core, the base actions for creating, editing, and deleting Generic Services. The editing action makes uses of the Widget concept for displaying the core form fields for the Generic Service on the edit page. 
+The [DigitalState-Platform](https://github.com/DigitalState/Platform) introduces the concept of Government Services through the [DsServiceBundle](https://github.com/DigitalState/Platform/tree/master/src/Ds/Bundle/ServiceBundle). This bundle provides, at its core, the base actions for creating, editing, and deleting Generic Services. The editing action uses of the Widget concept for displaying the core form fields for the Generic Service. 
 
-The [DigitalState-Platform](https://github.com/DigitalState/Platform) also introduces the concept of [BPM](https://en.wikipedia.org/wiki/Business_process_modeling) Services through the [DsServiceBpmBundle](https://github.com/DigitalState/Platform/tree/master/src/Ds/Bundle/ServiceBpmBundle). This bundle essentially grafts itself on top of the [DsServiceBundle](https://github.com/DigitalState/Platform/tree/master/src/Ds/Bundle/ServiceBundle) to provide additional BPM-related functionality for when a manager wishes to create a BPM-based Service. A BPM Service is the same as a Generic Service, with additional fields to map the BPM process definition id, etc. The bundle defines an additional Widget for the additional form fields and [flags the context of the widget as `bpm`](https://github.com/DigitalState/Platform/blob/master/src/Ds/Bundle/ServiceBpmBundle/Resources/config/widgets.yml), meaning this Widget should only be displayed if it belongs to the specific position and the specific context.
+The [DigitalState-Platform](https://github.com/DigitalState/Platform) also introduces the concept of [BPM](https://en.wikipedia.org/wiki/Business_process_modeling) Services through the [DsServiceBpmBundle](https://github.com/DigitalState/Platform/tree/master/src/Ds/Bundle/ServiceBpmBundle). This bundle grafts itself on top of the [DsServiceBundle](https://github.com/DigitalState/Platform/tree/master/src/Ds/Bundle/ServiceBundle) to provide additional BPM-related functionality for when a business user wishes to create a BPM-based Service. A BPM Service is the same as a Generic Service, with additional fields to map the BPM process definition id and other BPM specific configurations. The DsServiceBpmBundle defines an additional Widget for the additional form fields and [flags the context of the widget as `bpm`](https://github.com/DigitalState/Platform/blob/master/src/Ds/Bundle/ServiceBpmBundle/Resources/config/widgets.yml), meaning this Widget should only be displayed the specific context of BPM.
 
+**The template position**:
+
+```twig
+<html>
+    <body>
+        <main>
+            <form>
+                {% for widget in ds_widgets({ position: 'main', context: 'bpm' }) %}
+                    <h3>{{ widget.title }}</h3>
+                    {{ widget.content|raw }}
+                {% endfor %}
+            </form>
+        </main>
+    </body>
+</html>
+```
 
 ## Todo
 
