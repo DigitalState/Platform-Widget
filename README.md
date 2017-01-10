@@ -78,7 +78,7 @@ The [DigitalState-Platform](https://github.com/DigitalState/Platform) introduces
 
 The [DigitalState-Platform](https://github.com/DigitalState/Platform) also introduces the concept of [BPM](https://en.wikipedia.org/wiki/Business_process_modeling) Services through the [DsServiceBpmBundle](https://github.com/DigitalState/Platform/tree/master/src/Ds/Bundle/ServiceBpmBundle). This bundle grafts itself on top of the [DsServiceBundle](https://github.com/DigitalState/Platform/tree/master/src/Ds/Bundle/ServiceBundle) to provide additional BPM-related functionality for when a business user wishes to create a BPM-based Service. A BPM Service is the same as a Generic Service, with additional fields to map the BPM process definition id and other BPM specific configurations. The DsServiceBpmBundle defines an additional Widget for the additional form fields and [flags the context of the widget as `bpm`](https://github.com/DigitalState/Platform/blob/master/src/Ds/Bundle/ServiceBpmBundle/Resources/config/widgets.yml), meaning this Widget should only be displayed the specific context of BPM.
 
-**The template position**:
+**The template position with context defined**:
 
 ```twig
 <html>
