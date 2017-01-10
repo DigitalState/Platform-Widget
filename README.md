@@ -4,18 +4,18 @@ The Widget bundle provides the developer a way to define widgets in the user int
 
 ## Table of Contents
 
-- [Widget Definition](#widget-definition)
-- [Widget Creation](#widget-creation)
+- [Widget Entity](#widget-entity)
+- [Creating a Widget](#creating-a-widget)
 - [Context Filter](#context-filter)
 - [Todo](#todo)
 
-## Widget Definition
+## Widget Entity
 
 A widget consists of a title and content meant to be displayed in a template in a specific position. Essentially, it allows the developer to customise templates without directly modifying the template files. Widgets are comparable to [ORO Placeholders](https://github.com/orocrm/platform/tree/master/src/Oro/Bundle/UIBundle#introduction-to-placeholders) with two additional features: the capability of adding a title and the context filter.
 
 *Note: Eventually, if possible, we will merge the concept of widgets to ORO Placeholders with our additional features.*
 
-## Widget Creation
+## Creating a Widget
 
 Widgets can be created in any bundle. They are defined the same way as any other services in Symfony using the Service Container. The developer will need to tag the service with the `ds.widget` tag in order for the system to pick it up as a widget. Finally, the developer will need to define a position in a template file, where the widget should be displayed.
 
