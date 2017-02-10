@@ -2,6 +2,9 @@
 
 The Widget bundle provides the developers a way to define widgets in the user interface. 
 
+[![Code Climate](https://codeclimate.com/github/DigitalState/Platform-Widget-Bundle/badges/gpa.svg)](https://codeclimate.com/github/DigitalState/Platform-Widget-Bundle)
+[![Test Coverage](https://codeclimate.com/github/DigitalState/Platform-Widget-Bundle/badges/coverage.svg)](https://codeclimate.com/github/DigitalState/Platform-Widget-Bundle/coverage)
+
 ## Table of Contents
 
 - [Widget Entity](#widget-entity)
